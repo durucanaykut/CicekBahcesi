@@ -1,0 +1,81 @@
+/*Madde imlerini kaldırıp tüm başlıkları alt alta sıralayalım.*/
+#menum ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+/*Ana menü başlıklarının alt alta değil de soldan sağa doğru sıralanması için float:left; özelliğine kullanalım. Çünkü yatay menü yapıyoruz.*/
+#menum li{
+	float:left;
+	position:relative;
+	width:150px;
+}
+/*
+Şimdi alt menu olarak açılacak alt menümüzün ayarlamasını yapıyoruz.
+Alt menü olarak açılacak menümüzün pozisyonunu : Satır yüksekliği (line-height) + kenar boşluğu (padding) + kenar çizgi kalınlıkları
+ 
+Satır yüksekliğini sonradan 16 px vereceğiz. Alt ve üst kenar boşluklarına 2 px verelim, kenar çizgileri de 1px olsun (alt ve üst hesaba dahil olacak), 
+Toplam 16+(2x2)+(2x1)=22 px olacaktır.
+ 
+Alt açılan menünün üst çizgisi ile üst menümüzün alt çizgisi üst üste geleceği için alt menümüzün açılması gereken pozisyonu, yukarıdan 22-1=21 px olarak ayarlamamız daha doğru olacaktır. Yine sayfamız ilk yüklendiğinde alt menünün gözükmemesi için “display:none;” yapılmalıdır.
+*/
+#menum li ul{
+	display:none;/*Alt menüleri görünmez yapar*/
+	left:0;/*Soldan boşlukları temizler*/
+	position:absolute;/*Alt menünün poziyonunu üst menüye göre göreceli olarak ayarlar*/
+	top:21px;/*üstten 21px boşluk bırakır*/
+}
+
+/*Üzerine geldiğimizde Alt menülerin gözükmesi için ise*/
+#menum li:hover ul{
+	display:block;
+}
+a {
+	color:black
+	font-weight:bold;
+	font-size:16px;
+}
+.renklibuton{
+	width:150px;
+	cursor:pointer;
+	border:outset 3px orange;
+	background:pink;
+	color:red;
+	font-weight:bold;
+	padding: 2px 4px;
+	
+}
+#renklibuton:hover{
+	background:orange;
+	color:#f00;
+}
+body {
+	background-image: url(photo/Backgrounds01.jpg);
+	background-repeat: repeat;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #339900;
+}
+
+li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FF0000;
+	font-weight: bold;
+}
+.style1 {font-size: 40px}
+.style3 {
+	font-size: 40px;
+	color: #E70000;
+	font-weight: bold;
+}
+.style4 {
+	font-size: 30px;
+	color: #0000FF;
+	font-weight: bold;
+}
+.telif {
+	font-size: 18px;
+	font-weight: bold;
+}
